@@ -1,32 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Saltos LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Saltos LLC — Water • Data • Exploration" />
+
   <style>
-    body {
+    :root{
+      --bg: #0b2e4f;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,.82);
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.14);
+      --shadow: rgba(0,0,0,.25);
+      --maxw: 980px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: #0b2e4f;
-      color: white;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a{ color: var(--text); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    /* HERO */
+    .hero{
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
+      padding: 64px 24px 40px;
     }
-    img {
-      max-width: 240px;
-      margin-bottom: 1rem;
+
+    .hero-inner{
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .logo{
+      width: min(220px, 60vw);
+      height: auto;
+      margin: 0 auto 18px;
+      display: block;
+      filter: drop-shadow(0 10px 24px var(--shadow));
+    }
+
+    h1{
+      margin: 0;
+      font-size: clamp(34px, 5vw, 54px);
+      letter-spacing: 0.3px;
+    }
+
+    .tagline{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.8vw, 18px);
+    }
+
+    .scroll-hint{
+      margin-top: 36px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: rgba(255,255,255,.65);
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .chev{
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid rgba(255,255,255,.65);
+      border-bottom: 2px solid rgba(255,255,255,.65);
+      transform: rotate(45deg);
+      animation: bob 1.6s ease-in-out infinite;
+    }
+
+    @keyframes bob{
+      0%, 100% { transform: rotate(45deg) translate(0, 0); }
+      50% { transform: rotate(45deg) translate(2px, 2px); }
+    }
+
+    /* CONTENT */
+    main{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px 72px;
+    }
+
+    .section{
+      padding: 64px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .section h2{
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+
+    .section p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .bullets{
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .bullets li{ margin: 8px 0; }
+
+    .grid{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card{
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.12);
+    }
+
+    .card strong{
+      display: block;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .card span{
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 720px){
+      .card{ grid-column: span 6; }
+    }
+
+    footer{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+      color: rgba(255,255,255,.60);
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .pill{
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .pill a{
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      text-decoration: none;
+    }
+
+    .pill a:hover{
+      background: rgba(255,255,255,.08);
+      text-decoration: none;
     }
   </style>
 </head>
+
 <body>
-  <div>
-    <img src="logo.png" alt="Saltos LLC Logo">
-    <h1>Saltos LLC</h1>
-    <p>Water • Data • Exploration</p>
-  </div>
+  <!-- HERO -->
+  <section class="hero" aria-label="Saltos LLC hero">
+    <div class="hero-inner">
+      <img class="logo" src="logo.png" alt="Saltos LLC logo" />
+      <h1>Saltos LLC</h1>
+      <p class="tagline">Water • Data • Exploration</p>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="chev"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main>
+    <section class="section" id="services">
+      <h2>What we do</h2>
+      <p>
+        We build practical geospatial and remote-sensing tools for water and environmental decision-making,
+        from data pipelines to clear, actionable visuals.
+      </p>
+      <ul class="bullets">
+        <li>Hydrology + Earth observation analytics (SWOT, LiDAR, optical, time series)</li>
+        <li>Reproducible geospatial pipelines (Python, R, GIS)</li>
+        <li>Dashboards, maps, and decision-support tooling</li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <p>
+        A mix of open-source work and client-facing deliverables. (You can replace these with specific links any time.)
+      </p>
+
+      <div class="grid">
+        <a class="card" href="https://github.com/SaltosLLC" target="_blank" rel="noopener">
+          <strong>GitHub</strong>
+          <span>Repositories, tools, and reproducible analyses.</span>
+        </a>
+
+        <a class="card" href="#" onclick="return false;">
+          <strong>Case studies (coming soon)</strong>
+          <span>Add one-page writeups for 2–4 key projects.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p>
+        Want to talk scope, timelines, or data access? Email is best.
+      </p>
+
+      <div class="pill">
+        <a href="mailto:hello@saltosllc.com">hello@saltosllc.com</a>
+        <!-- Replace with your LinkedIn when ready -->
+        <a href="#" onclick="return false;">LinkedIn (add link)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Saltos LLC
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
