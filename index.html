@@ -136,6 +136,14 @@
       border-radius: var(--radius);
       padding: 16px 16px 14px;
       box-shadow: 0 10px 26px rgba(0,0,0,.12);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.075);
+      border-color: rgba(255,255,255,.22);
+      text-decoration: none;
     }
 
     .card strong{
@@ -179,10 +187,12 @@
       border: 1px solid var(--border);
       background: rgba(255,255,255,.04);
       text-decoration: none;
+      transition: background .12s ease, border-color .12s ease;
     }
 
     .pill a:hover{
       background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.22);
       text-decoration: none;
     }
   </style>
@@ -221,13 +231,31 @@
     <section class="section" id="projects">
       <h2>Projects</h2>
       <p>
-        A mix of open-source work and client-facing deliverables. (You can replace these with specific links any time.)
+        A mix of open-source work and client-facing deliverables.
       </p>
 
       <div class="grid">
         <a class="card" href="https://github.com/SaltosLLC" target="_blank" rel="noopener">
-          <strong>GitHub</strong>
-          <span>Repositories, tools, and reproducible analyses.</span>
+          <strong>Saltos LLC — GitHub</strong>
+          <span>Client deliverables, open tools, and reproducible analyses.</span>
+        </a>
+
+        <a class="card" href="https://github.com/tjwilkerson" target="_blank" rel="noopener">
+          <strong>Personal GitHub</strong>
+          <span>Independent research, experiments, and prototyping.</span>
+        </a>
+
+        <a
+          class="card"
+          href="https://experience.arcgis.com/experience/8fcc16b9920e4d5fae2ee4c7ad1379c4/page/Home#data_s=id%3AdataSource_8-197f545b649-layer-2-197f545b7e0-layer-4%3A734%2Cwhere%3AdataSource_8-197f545b7e2-layer-9%3ATARGET_FID%20IN%20(733)"
+          target="_blank"
+          rel="noopener"
+        >
+          <strong>Interactive Weather & Hydrology Data Portal</strong>
+          <span>
+            Designed and built the user interface, data portal, and full pipeline for
+            weather-data download, processing, and harmonization.
+          </span>
         </a>
 
         <a class="card" href="#" onclick="return false;">
