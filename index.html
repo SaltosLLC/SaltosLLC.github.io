@@ -259,6 +259,7 @@
       font-weight: 700;
     }
 
+    /* SERVICES */
     .service-grid{
       margin-top: 24px;
       display: grid;
@@ -267,29 +268,26 @@
     }
 
     .service-card{
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.10);
-      transition: transform .14s ease, background .14s ease, border-color .14s ease;
-    }
-
-    .service-card:hover{
-      transform: translateY(-3px);
-      background: rgba(255,255,255,.075);
-      border-color: rgba(255,255,255,.22);
+      position: relative;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      border-left: 3px solid rgba(255,255,255,.28);
+      border-radius: 14px;
+      padding: 18px 18px 18px 20px;
+      box-shadow: none;
+      cursor: default;
     }
 
     .service-card .icon{
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.10);
+      width: auto;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 0;
+      background: none;
+      color: rgba(255,255,255,.48);
       font-size: 22px;
+      line-height: 1;
     }
 
     .service-card strong{
@@ -309,6 +307,7 @@
       }
     }
 
+    /* PROJECTS */
     .grid{
       margin-top: 24px;
       display: grid;
@@ -395,6 +394,7 @@
       }
     }
 
+    /* CONTACT */
     footer{
       max-width: var(--maxw);
       margin: 0 auto;
